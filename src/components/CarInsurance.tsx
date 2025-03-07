@@ -143,7 +143,10 @@ export const CarInsurance: FC<CarInsuranceProps> = ({ name }) => {
               <button
                 key={brand}
                 className={'text-gray-700 rounded shadow p-2 cursor-pointer me-2 mt-2'}
-                onClick={() => setSelectedCarBrand(brand)}
+                onClick={() => {
+                  setSelectedCarBrand(brand);
+                  fetchCarTypes(brand, selectedCountry);
+                }}
               >
                 {brand}
               </button>
@@ -170,7 +173,10 @@ export const CarInsurance: FC<CarInsuranceProps> = ({ name }) => {
               <button
                 key={type}
                 className={'text-gray-700 rounded shadow p-2 cursor-pointer me-2 mt-2'}
-                onClick={() => setSelectedCarType(type)}
+                onClick={() => {
+                  setSelectedCarType(type);
+                  fetchYears(selectedCarBrand, type, selectedCountry);
+                }}
               >
                 {type}
               </button>
@@ -197,7 +203,10 @@ export const CarInsurance: FC<CarInsuranceProps> = ({ name }) => {
               <button
                 key={year}
                 className={'text-gray-700 rounded shadow p-2 cursor-pointer me-2 mt-2'}
-                onClick={() => setSelectedYear(year)}
+                onClick={() => {
+                  setSelectedYear(year);
+                  fetchCost(selectedCarBrand, selectedCarType, year, selectedCountry);
+                }}
               >
                 {year}
               </button>
@@ -205,7 +214,7 @@ export const CarInsurance: FC<CarInsuranceProps> = ({ name }) => {
         </div>
       )}
 
-      {selectedYear && <p className={'mt-3'}>{insuranceCost}.</p>}
+      {selectedYear && <p className={'mt-3'}>{insuranceCost}</p>}
     </div>
   );
 };

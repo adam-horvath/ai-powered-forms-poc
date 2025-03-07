@@ -17,7 +17,7 @@ export const processResponse = (response: OpenAIResponse) => {
 export const processEmails = (emails: string) => emails.split(/\s+/).filter((mail: any) => mail.includes('@'));
 
 export const processCommaSeparated = (countries: string) =>
-  countries.split(',').map((country: string) => country.trim());
+  countries.split(countries.includes(',') ? ',' : /\s+/).map((country: string) => country.trim());
 
 export const processCars = (cars: string) => {
   return cars

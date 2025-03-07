@@ -6,7 +6,7 @@ export const fetchEmailResponse = async (name: string) => {
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
     {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4-turbo',
       messages: [
         {
           role: 'system',
@@ -34,7 +34,7 @@ export const fetchCountryResponse = async (name: string) => {
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
     {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4-turbo',
       messages: [
         {
           role: 'system',
@@ -62,7 +62,7 @@ export const fetchCarBrandResponse = async (country: string) => {
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
     {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4-turbo',
       messages: [
         {
           role: 'system',
@@ -90,7 +90,7 @@ export const fetchCarTypeResponse = async (brand: string, country: string) => {
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
     {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4-turbo',
       messages: [
         {
           role: 'system',
@@ -118,7 +118,7 @@ export const fetchYearsResponse = async (brand: string, type: string, country: s
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
     {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4-turbo',
       messages: [
         {
           role: 'system',
@@ -147,7 +147,7 @@ export const fetchCostResponse = async (brand: string, type: string, year: strin
   const response = await axios.post(
     'https://api.openai.com/v1/chat/completions',
     {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4-turbo',
       messages: [
         {
           role: 'system',
